@@ -1,40 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# shadcn-a11y-sandbox
+
+A sandbox for exercising the **`radix-mira`** [shadcn/ui](https://ui.shadcn.com) component style with a focus on **accessibility**. Built on Next.js 16 (Pages Router), React 19, and Tailwind CSS v4.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm start       # serve production build
+npm run lint    # eslint (flat config)
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+No test runner is configured.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **`/`** (`pages/index.tsx`) — accessible dashboard: sidebar nav, tabs, a sortable data table, progress, and slider controls.
+- **`/settings`** (`pages/settings.tsx`) — accessible account settings: profile form (`react-hook-form` + `zod`), theme switcher (light / dark / system), and a destructive-action confirmation dialog.
 
-## Learn More
+## Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 16.2.9** — **Pages Router** (`pages/`), no App Router, no Server Components (`rsc: false`).
+- **React 19**.
+- **shadcn/ui** — `radix-mira` style (see `components.json`), `baseColor: neutral`, CSS variables on. Components live in `components/ui/` and are generated via the shadcn CLI.
+- **Radix UI** — the single `radix-ui` package (e.g. `import { Slot } from "radix-ui"`), not per-primitive `@radix-ui/*` packages.
+- **Tailwind CSS v4** — CSS-first config in `styles/globals.css` (no `tailwind.config.js`). Theme tokens are `oklch()` custom properties under `:root` / `.dark`; dark mode toggles the `dark` class on an ancestor.
+- **Icons** — `@hugeicons/react` + `@hugeicons/core-free-icons`.
+- **Forms** — `react-hook-form` + `zod` (`@hookform/resolvers`).
+- **TypeScript** — strict mode, path alias `@/*` → repo root.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Project Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+This Next.js version has breaking changes from older releases. Before writing Next.js code, read the relevant guide under `node_modules/next/dist/docs/` (`02-pages`). See `CLAUDE.md` and `AGENTS.md` for details.

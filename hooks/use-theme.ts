@@ -48,7 +48,7 @@ export function useTheme() {
     () => "system" as Theme,
   );
 
-  // Effect only pushes state out to an external system (the DOM) — allowed.
+  // Effect only pushes state out to an external system (the DOM) - allowed.
   React.useEffect(() => {
     applyTheme(theme);
   }, [theme]);

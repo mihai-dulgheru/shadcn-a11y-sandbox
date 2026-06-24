@@ -97,7 +97,7 @@ export default function SettingsPage() {
     ((firstName?.[0] ?? "") + (lastName?.[0] ?? "")).trim() || "?";
 
   function onSubmit(values: ProfileValues) {
-    // No backend in this sandbox — simulate a successful save.
+    // No backend in this sandbox - simulate a successful save.
     setSavedAt(new Date().toLocaleTimeString());
     form.reset(values);
   }
@@ -110,7 +110,7 @@ export default function SettingsPage() {
         <title>Account settings</title>
       </Head>
 
-      {/* Skip link — visually hidden until focused via keyboard. */}
+      {/* Skip link - visually hidden until focused via keyboard. */}
       <a
         href="#main-content"
         className="sr-only rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground focus-visible:fixed focus-visible:top-3 focus-visible:left-3 focus-visible:z-50 focus-visible:not-sr-only focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -416,7 +416,7 @@ export default function SettingsPage() {
                 className="text-sm text-destructive"
               >
                 {deleted
-                  ? "Account deletion confirmed (demo — no data was removed)."
+                  ? "Account deletion confirmed (demo - no data was removed)."
                   : null}
               </p>
             </div>
