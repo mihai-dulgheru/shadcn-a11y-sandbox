@@ -160,7 +160,7 @@ export default function SettingsPage() {
           tabIndex={-1}
           className="flex flex-col gap-8 outline-none"
         >
-          {/* Personal details ------------------------------------------------ */}
+          {/* Personal details */}
           <section
             aria-labelledby="personal-details-heading"
             className="flex flex-col gap-4 rounded-xl border border-border p-5"
@@ -270,7 +270,7 @@ export default function SettingsPage() {
             </Form>
           </section>
 
-          {/* Appearance ------------------------------------------------------- */}
+          {/* Appearance */}
           <section
             aria-labelledby="appearance-heading"
             className="flex flex-col gap-4 rounded-xl border border-border p-5"
@@ -342,7 +342,7 @@ export default function SettingsPage() {
             </div>
           </section>
 
-          {/* Danger zone ------------------------------------------------------ */}
+          {/* Danger zone */}
           <section
             aria-labelledby="danger-heading"
             className="flex flex-col gap-4 rounded-xl border border-destructive/30 p-5"

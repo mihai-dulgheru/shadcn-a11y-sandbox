@@ -26,7 +26,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 
-// --- Sidebar navigation ----------------------------------------------------
+// Sidebar navigation
 const NAV = [
   { id: "overview", label: "Dashboard", icon: DashboardSquare01Icon },
   { id: "analytics", label: "Analytics", icon: Analytics01Icon },
@@ -43,7 +43,7 @@ const NAV = [
 const NAV_LINK_CLASS =
   "flex items-center gap-2.5 rounded-md px-3 py-2 text-sm font-medium transition-colors outline-none hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
-// --- Table data ------------------------------------------------------------
+// Table data
 type Row = { name: string; email: string; role: string; status: string };
 const ROWS: Row[] = [
   {
@@ -122,7 +122,7 @@ export default function DashboardPage() {
         <title>Dashboard</title>
       </Head>
 
-      {/* 1. Skip link - visually hidden until focused via keyboard. */}
+      {/* Skip link - visually hidden until focused via keyboard. */}
       <a
         href="#main-content"
         className="sr-only rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground focus-visible:fixed focus-visible:top-3 focus-visible:left-3 focus-visible:z-50 focus-visible:not-sr-only focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -131,7 +131,7 @@ export default function DashboardPage() {
       </a>
 
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        {/* 2. <header> landmark */}
+        {/* <header> landmark */}
         <header className="flex h-14 items-center gap-3 border-b border-border px-4">
           <span className="flex size-7 items-center justify-center rounded-md bg-primary text-primary-foreground">
             <HugeiconsIcon
@@ -146,7 +146,7 @@ export default function DashboardPage() {
         </header>
 
         <div className="flex flex-1">
-          {/* 2 + 3. <aside> landmark containing <nav> with aria-current */}
+          {/* <aside> landmark containing <nav> with aria-current */}
           <aside className="w-56 shrink-0 border-r border-border p-3">
             <nav aria-label="Primary">
               <ul className="flex flex-col gap-1">
@@ -208,7 +208,7 @@ export default function DashboardPage() {
             </nav>
           </aside>
 
-          {/* 4. <main> landmark */}
+          {/* <main> landmark */}
           <main
             id="main-content"
             tabIndex={-1}
@@ -227,7 +227,7 @@ export default function DashboardPage() {
                 <TabsTrigger value="usage">Usage</TabsTrigger>
               </TabsList>
 
-              {/* 5. Tab one: sortable Table with aria-sort */}
+              {/* Tab one: sortable Table with aria-sort */}
               <TabsContent value="members">
                 <div className="rounded-xl border border-border">
                   <Table>
@@ -295,7 +295,7 @@ export default function DashboardPage() {
                 </div>
               </TabsContent>
 
-              {/* 6. Tab two: Slider + Progress with aria-value* */}
+              {/* Tab two: Slider + Progress with aria-value* */}
               <TabsContent value="usage">
                 <div className="flex max-w-md flex-col gap-8 rounded-xl border border-border p-5">
                   <div className="flex flex-col gap-3">
